@@ -36,7 +36,7 @@ foreach ($spending as $row) {
     echo "<tr>";
     echo "<th>" . date("d-m-Y",strtotime($row["date"])) . "</th>";
     echo "<th>" . $row["description"] . "</th>";
-    echo "<th>" . $row["spend"] . "</th>";
+    echo "<th>" . $row["spend"] / 100 . "</th>";
     echo "</tr>";
     $sum += $row["spend"];
 }
