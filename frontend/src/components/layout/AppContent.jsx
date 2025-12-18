@@ -1,4 +1,6 @@
 import { Layout, Table } from 'antd';
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
 const contentStyle = {
   textAlign: 'center',
@@ -41,6 +43,22 @@ const columns = [
 ];
 
 export default function AppContent() {
+    const [page, setPage] = useState(1);
+
+    const {
+      data: posts,
+      isError,
+      isPending,
+    } = useQuery({
+      queryKey: ["posts", { page }],
+      queryFn: async () => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+        return (await response.json());
+      },
+    });
+
+    console.log(posts)
+
     return(
     <Layout.Content style={contentStyle}>
       <Table dataSource={dataSource} columns={columns} />;
