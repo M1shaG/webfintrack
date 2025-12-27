@@ -1,5 +1,5 @@
 import { Layout } from 'antd';
-
+import { Link } from 'react-router-dom';
 const headerStyle = {
   textAlign: 'center',
   height: 64,
@@ -15,7 +15,12 @@ const headerLogo = {
 }
 
 const logoText = {
-  marginLeft: '10px'
+  marginLeft: '10px',
+  color: 'black'
+}
+
+const logoNav = {
+  margin: '10px'
 }
 
 export default function AppHeader() {
@@ -25,7 +30,8 @@ export default function AppHeader() {
         <h3 style={logoText}>webfincrack</h3>
       </div>
       <div>
-        <div>Sign Up</div>
+        <Link style={logoNav} Link to = "">Home</Link>
+        <Link to = "registration">Sign Up</Link>
       </div>
     </Layout.Header>)
 }

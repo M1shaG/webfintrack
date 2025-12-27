@@ -4,6 +4,7 @@ const footerStyle = {
   textAlign: 'center',
   color: '#fff',
   backgroundColor: '#4096ff',
+  height: 32,
 };
 
 export default function AppFooter() {

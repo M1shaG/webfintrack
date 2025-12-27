@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const contentStyle = {
   textAlign: 'center',
-  minHeight: `calc(100vh - 60px)`,
+  minHeight: `calc(100vh - 64px)`,
   lineHeight: '120px',
   color: '#fff',
 };
