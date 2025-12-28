@@ -1,7 +1,6 @@
 import { Outlet } from "react-router";
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd';
-
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 const main = {
   display: 'flex',
   background: 'white',
@@ -45,16 +44,7 @@ export default function SignUp() {
             name="username"
             rules={[{required: true, message: 'Please input your username!'}]}
         >
-        <Input />
-        </Form.Item>
-
-        <Form.Item
-            layout="vertical"
-            label="Mail"
-            name="mail"
-            rules={[{required: true, message: 'Please input your mail!'}]}
-        >
-        <Input />
+        <Input prefix={<UserOutlined />} placeholder="Username" />
         </Form.Item>
 
         <Form.Item
@@ -63,23 +53,18 @@ export default function SignUp() {
             name="password"
             rules={[{required: true, message: 'Please input your password!'}]}
         >
-        <Input type="password" placeholder="Password" />
+        <Input prefix={<LockOutlined />} type="password" placeholder="Password" />
         </Form.Item>
 
-        <Form.Item
-            layout="vertical"
-            label="Repeat Password"
-            name="rep_password"
-            rules={[{required: true, message: 'Please input your password!'}]}
-        >
-        <Input ype="password" placeholder="Password" />
+        <Form.Item name="remember" valuePropName="checked" label={null}>
+            <Checkbox>Remember me</Checkbox>
         </Form.Item>
 
         <Form.Item label={null}>
             <Button block type="primary" htmlType="submit">
                 Submit
             </Button>
-            or <a href="">Register now!</a>
+             or <a href="">Register now!</a>
         </Form.Item>
         
 
@@ -90,5 +75,3 @@ export default function SignUp() {
     </div>
     )
 } 
-
-

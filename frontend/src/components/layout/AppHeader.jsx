@@ -30,8 +30,9 @@ export default function AppHeader() {
         <h3 style={logoText}>webfincrack</h3>
       </div>
       <div>
-        <Link style={logoNav} Link to = "">Home</Link>
+        <Link style={logoNav} to = "">Home</Link>
         <Link to = "registration">Sign Up</Link>
+        <Link to = "login">Login</Link>
       </div>
     </Layout.Header>)
 }
